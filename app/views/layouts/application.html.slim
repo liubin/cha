@@ -28,21 +28,20 @@ html
                 | Home
             li
               a href="/books"
-                | Books
+                | 图书
             li
               a href="#"
-                | Contact
+                | 热议
 
 
             li.dropdown
               a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-                | Dropdown 
+                | 快捷方式
                 span.caret
 
               ul.dropdown-menu
                 li
-                  a href='#'
-                    | Action 1
+                  = link_to '邀请小伙伴', new_user_invitation_path
                 li
                   a href='#'
                     | Action 2
@@ -78,6 +77,13 @@ html
                   li
                     = link_to t('devise.label.change_password'), edit_user_registration_path
                   li role="separator" class="divider"
+                    li
+                      = link_to '我的借阅', '#'
+                    li
+                      = link_to '我的预定', '#'
+
+                  li role="separator" class="divider"
+
                   li
                     = link_to t('devise.label.logout'), destroy_user_session_path, method: 'delete'
 

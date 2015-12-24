@@ -1,6 +1,6 @@
 .pull-right
 
-  = link_to '排队', waiting_book_path(@book), method: 'post', class: 'btn btn-success'
+  = link_to '预约', waiting_book_path(@book), method: 'post', class: 'btn btn-success'
   = link_to '借阅', borrowing_book_path(@book), method: 'post', class: 'btn btn-success'
 
 = image_tag @book.image

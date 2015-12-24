@@ -40,10 +40,10 @@
 
     - if book.waitings.empty?
       span
-        label 暂无人排队
+        label 暂无人预约
     -else
       span
-        label 排队中：
+        label 预约中：
         .waiting-users
           - book.waitings.each do |waiting|
             = render 'user_list_item', user: waiting.user
