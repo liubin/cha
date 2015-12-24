@@ -1,0 +1,49 @@
+.book.col-md-4
+  span
+    a href="#{book_path(book)}"
+      = image_tag(book.image)
+  span.book-props
+    span
+      label 书名：
+      span = book.title
+    - if book.subtitle.present?
+      span
+        label 副标题：
+        span = book.subtitle
+
+    span
+      label 作者：
+      span = book.author
+    - if book.translator.present?
+      span
+        label 译者：
+        span = book.translator
+    span
+      label 页数：
+      span = book.pages
+    span
+      label 出版社：
+      span = book.publisher
+    span
+      label 可借阅册数：
+      span = book.stocks
+
+    - if book.lendings.empty?
+      span
+        label 暂无人阅读
+    -else
+      span
+        label 阅读中：
+        .lending-users
+          - book.lendings.each do |lending|
+            = render 'user_list_item', user: lending.user
+
+    - if book.waitings.empty?
+      span
+        label 暂无人排队
+    -else
+      span
+        label 排队中：
+        .waiting-users
+          - book.waitings.each do |waiting|
+            = render 'user_list_item', user: waiting.user

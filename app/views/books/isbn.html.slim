@@ -1,0 +1,14 @@
+= form_for(@book, url: isbn_books_path, method: 'post', class: 'form-horizontal') do |f|
+  - if @book.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@book.errors.count, "error")} prohibited this book from being saved:"
+      ul
+        - @book.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :isbn, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :isbn, class: "form-control"
+
+  .actions = f.submit(class: "form-control btn btn-success")

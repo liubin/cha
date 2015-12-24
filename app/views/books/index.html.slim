@@ -1,0 +1,12 @@
+h1 Listing books
+
+- @books.each_with_index do |book, i|
+  - if (i % 3 == 0)
+    .row
+  = render 'book', book: book
+
+br
+
+= paginate @books
+
+= link_to 'New Book', isbn_books_path, class: 'btn btn-success'

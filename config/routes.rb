@@ -1,12 +1,26 @@
 Rails.application.routes.draw do
+  resources :books do
+    member do
+      match 'transfer', via: ['get', 'post']
+      match 'borrowing', via: ['get', 'post']
+      match 'waiting', via: ['get', 'post']
+    end
+
+    collection do
+      match 'isbn', via: ['get', 'post']
+    end
+  end
+
   get 'profile' => 'profile#show'
+  get 'user/:id' => 'profile#show'
   get 'profile/edit'
   match 'profile/update', :via => ['post']
   match 'profile/avatar', :via => ['post', 'get']
 
   get 'dash/index'
 
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

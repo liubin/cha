@@ -1,0 +1,66 @@
+= form_for(@book, class: 'form-horizontal') do |f|
+  - if @book.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@book.errors.count, "error")} prohibited this book from being saved:"
+      ul
+        - @book.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :isbn, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :isbn, class: "form-control"
+  .form-group
+    = f.label :title, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :subtitle, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :subtitle, class: "form-control"
+  .form-group
+    = f.label :image, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :image, class: "form-control"
+  .form-group
+    = f.label :author, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :author, class: "form-control"
+  .form-group
+    = f.label :translator, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :translator, class: "form-control"
+  .form-group
+    = f.label :pages, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :pages, class: "form-control"
+  .form-group
+    = f.label :douban_url, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :douban_url, class: "form-control"
+  .form-group
+    = f.label :jd_url, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :jd_url, class: "form-control"
+  .form-group
+    = f.label :publisher, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :publisher, class: "form-control"
+  .form-group
+    = f.label :author_intro, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_area :author_intro, class: "form-control", rows: 10
+  .form-group
+    = f.label :price, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :price, class: "form-control"
+  .form-group
+    = f.label :stocks, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :stocks, class: "form-control"
+  .form-group
+    = f.label :summary, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_area :summary, class: "form-control", rows: 10
+
+  .actions = f.submit(class: "form-control btn btn-success")

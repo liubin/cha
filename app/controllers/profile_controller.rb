@@ -2,6 +2,10 @@ class ProfileController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :avatar]
 
   def show
+    if params[:id].present?
+      # view other people
+      @profile = User.find(params[:id]).profile
+    end
     # ap @profile
   end
 

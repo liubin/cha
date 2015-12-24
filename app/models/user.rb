@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable, :lockable, :invitable
 
+  before_save :set_admin
+
   has_one :profile
 
   def send_devise_notification(notification, *args)
@@ -15,4 +17,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  private
+    def set_admin
+      if self.new_record?
+        self.admin = (User.count == 0)
+      end
+      true
+    end
 end
