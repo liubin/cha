@@ -1,6 +1,8 @@
 zh_CN:
   devise:
     invitations:
+      password: '密码'
+      password_confirmation: '密码确认'
       send_instructions: '邀请已发送至 %{email}。'
       invitation_token_invalid: '邀请码不正确！'
       updated: '密码已保存，你已经登录了。'
