@@ -1,0 +1,19 @@
+ja:
+  user:
+    profile:
+      nick: 'ニックネーム'
+      first_name: '名前（名）'
+      last_name: '苗字（姓）'
+      slug: 'Slug'
+      avatar: 'アバター'
+      title: '個人情報'
+      label:
+        edit_profile: '個人情報を編集する'
+        edit_avatar: 'アバターを編集する'
+      msg:
+        updated: '個人情報を更新しました。'
+      action:
+        edit: '個人情報を編集する'
+        edit_avatar: 'アバターを更新'
+        save: '保存'
+        cancel: '取り消し'

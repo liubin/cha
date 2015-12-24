@@ -1,0 +1,31 @@
+h2
+  = t('devise.label.edit')
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = devise_error_messages!
+
+  .field
+    = f.label t('devise.label.password')
+    i
+      = t('devise.label.leave_blank')
+    br
+    = f.password_field :password, autocomplete: "off"
+  .field
+    = f.label t('devise.label.password_confirmation')
+    br
+    = f.password_field :password_confirmation, autocomplete: "off"
+  .field
+    = f.label t('devise.label.current_password')
+    i
+      = t('devise.label.need_confirm_password')
+    br
+    = f.password_field :current_password, autocomplete: "off"
+  .actions
+    = f.submit t('devise.label.save'), class: 'btn btn-success'
+h3
+  = t('devise.label.delete_account')
+p
+  = t('devise.label.unhappy')
+
+  = button_to t('devise.label.delete_account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger'
+

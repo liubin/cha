@@ -1,0 +1,114 @@
+# Chinese (China) translations for Devise(3.5.2)
+# by Kenrick-Zhou (https://github.com/Kenrick-Zhou)
+# https://gist.github.com/Kenrick-Zhou/7909822
+
+zh_CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "请输入Email"
+              taken: 'Email已经被使用'
+            password:
+              blank: "请输入密码"
+              too_short: '密码太短'
+            password_confirmation:
+              confirmation: '两次输入密码不一致'
+            current_password:
+              blank: '请输入当前密码'
+
+  devise:
+    label:
+      login: '登录'
+      logout: '退出登录'
+      profile: '个人信息'
+      email: 'Email'
+      edit: '修改个人信息'
+      save: '保存'
+      password: '密码'
+      password_confirmation: '密码确认'
+      need_confirm_password: '（需要确认密码）'
+      leave_blank: '（不修改密码的话留空）'
+      current_password: '当前密码'
+      minimum_password_length: "（长度小于%{length}）"
+      remember_me: '自动登录'
+      signup: '注册'
+      unhappy: '不爽？'
+      delete_account: '删除账号'
+      password_lost: '忘记密码'
+      change_password: '修改密码'
+      new_password: '新密码'
+      confirm_mail_not_received: '没有收到确认邮件'
+      unlock_mail_not_received: '没有收到解锁邮件'
+      signin_with_provider: "%{kind} アカウントによる認証"
+      resend_confirmation_instructions: '再次发送确认邮件'
+      resend_unlock_instructions: '再次发送解锁邮件'
+
+    confirmations:
+      confirmed: "您的帐号已经确认，您现在已登录。"
+      send_instructions: "几分钟后，您将收到确认帐号的电子邮件。"
+      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封确认账号的邮件。"
+    failure:
+      already_authenticated: "您已经登录。"
+      inactive: "您还没有激活帐户。"
+      invalid: "邮箱或密码错误。"
+      locked: "您的帐号已被锁定。"
+      last_attempt: "您还有最后一次尝试机会，再次失败您的账号将被锁定。"
+      not_found_in_database: "邮箱或密码错误。"
+      timeout: "您已登录超时，请重新登录。"
+      unauthenticated: "继续操作前请注册或者登录。"
+      unconfirmed: "继续操作前请先确认您的帐号。"
+    mailer:
+      confirmation_instructions:
+        subject: "确认信息"
+        welcome: '欢迎您 %{email} ！'
+        explain: '欢迎您注册我们的网站，您可以通过下面的连接以继续注册，以确认您的注册请求：'
+        confirm_my_account: '确认账号'
+      reset_password_instructions:
+        subject: "重置密码信息"
+        explain_1: '您已申请了重设密码操作，您可以通过下面的链接来继续完成此操作。'
+        explain_2: "<p>如果本操作并非您本人发起，请忽略此邮件。</p><p>只有您点击下面的链接并且设置一个新的密码之后，您的密码重置工作才算完成。</p>"
+        change_my_password: '修改密码'
+        hello: '%{email} 您好！'
+      unlock_instructions:
+        subject: "解锁信息"
+        hello: '%{email} 您好！'
+        unlock_my_account: '解除锁定'
+        explain: '<p>由于您已经超过了指定的登录失败次数，您的账号已经被锁定。</p><p>点击下面的链接解除锁定：</p>'
+    omniauth_callbacks:
+      failure: "因为%{reason}，所以您无法从%{kind}获得授权。"
+      success: "成功地从%{kind}获得授权。"
+    passwords:
+      no_token: "这是密码重置页面，未重置邮件不得访问此页面。如果您是通过重置邮件而来的，请确保您访问的URL是完整的。"
+      send_instructions: "几分钟后，您将收到重置密码的电子邮件。"
+      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封找回密码的邮件。"
+      updated: "您的密码已修改成功，您现在已登录。"
+      updated_not_active: "您的密码已修改成功。"
+    registrations:
+      destroyed: "再见！您的帐户已成功注销。我们希望很快可以再见到您。"
+      signed_up: "欢迎您！您已注册成功。"
+      signed_up_but_inactive: "您已注册，但尚未激活账号。"
+      signed_up_but_locked: "您已注册，但账号被锁定了。"
+      signed_up_but_unconfirmed: "一封带有确认链接的邮件已经发送至您的邮箱，请检查邮箱（包括垃圾邮箱），并点击该链接激活您的账号。"
+      update_needs_confirmation: "信息更新成功，但我们需要验证您的新电子邮件地址，请检查邮箱（包括垃圾邮箱），并点击该链接激活您的账号。"
+      updated: "帐号资料更新成功。"
+    sessions:
+      signed_in: "登录成功."
+      signed_out: "退出成功."
+      already_signed_out: "已经退出成功."
+    unlocks:
+      send_instructions: "几分钟后，您将收到一封解锁帐号的邮件。"
+      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件。"
+      unlocked: "您的帐号已成功解锁，您现在已登录。"
+  errors:
+    messages:
+      already_confirmed: "已经确认，请重新登录。"
+      confirmation_period_expired: "请在%{period}内确认注册, 请重新注册。"
+      expired: "邮件确认已过期，请重新注册。"
+      not_found: "没有找到。"
+      not_locked: "未锁定。"
+      not_saved:
+        one: "因为1个错误导致此%{resource}保存失败:"
+        other: "因为%{count}个错误导致此%{resource}保存失败:"

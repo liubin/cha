@@ -1,0 +1,21 @@
+h2 = t('user.profile.label.edit_avatar')
+
+= form_for(@profile, url: profile_avatar_path, method: 'post', class: 'form-horizontal') do |f|
+  - if @profile.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+      ul
+        - @profile.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label t('user.profile.avatar'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.file_field :avatar, class: "form-control"
+
+
+  = submit_tag t('user.profile.action.save'), class: "form-control btn btn-success"
+
+  = link_to t('user.profile.action.cancel'), profile_path, class: "form-control btn btn-primary"
+
+

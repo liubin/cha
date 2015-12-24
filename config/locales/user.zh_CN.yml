@@ -1,0 +1,19 @@
+zh_CN:
+  user:
+    profile:
+      nick: '昵称'
+      first_name: '名'
+      last_name: '姓氏'
+      slug: 'Slug'
+      avatar: '头像'
+      title: '个人信息'
+      label:
+        edit_profile: '编辑个人信息'
+        edit_avatar: '编辑个人头像'
+      msg:
+        updated: '个人信息成功更新。'
+      action:
+        edit: '编辑个人信息'
+        edit_avatar: '修改头像'
+        save: '保存'
+        cancel: '取消修改'

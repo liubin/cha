@@ -1,0 +1,109 @@
+doctype html
+html
+  head
+    title
+      | Ajisai
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+
+    nav class="navbar navbar-default navbar-fixed-top"
+      .container
+        .navbar-header
+          button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            span.sr-only
+              | Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+          a class="navbar-brand" href="#"
+            | ajisai
+
+        #navbar.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.active
+              a href="#"
+                | Home
+            li
+              a href="#"
+                | About
+            li
+              a href="#"
+                | Contact
+
+
+            li.dropdown
+              a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                | Dropdown 
+                span.caret
+
+              ul.dropdown-menu
+                li
+                  a href='#'
+                    | Action 1
+                li
+                  a href='#'
+                    | Action 2
+                li
+                  a href='#'
+                    | Action 3
+
+                li.divider role="separator"
+                li.dropdown-header
+                  | Nav header
+                li
+                  a href='#'
+                    | Separated link
+                li
+                  a href='#'
+                    | One more separated link
+
+          #navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li.dropdown
+                a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                  - if current_user.profile.nil?
+                    | ---
+                  - else
+                    - if current_user.profile.avatar.present?
+                      = image_tag current_user.profile.avatar.url(:thumb), class: 'avatar avatar-36'
+                    = current_user.profile.nick
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a[href="/profile"]
+                      = t 'devise.label.profile'
+                  li
+                    = link_to t('devise.label.change_password'), edit_user_registration_path
+                  li role="separator" class="divider"
+                  li
+                    = link_to t('devise.label.logout'), destroy_user_session_path, method: 'delete'
+
+    .container
+      - if notice
+        .alert.alert-info.alert-dismissible
+          button.close data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true"
+              | &times;
+          = notice
+      - if alert
+        .alert.alert-warning.alert-dismissible
+          button.close data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true"
+              | &times;
+          = alert
+
+      = yield
+
+
+    footer.footer
+      .container
+        p.text-muted.pull-right
+          = link_to 'ajisai@GitHub', 'https://github.com/liubin/ajisai'
+
+    javascript:
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = yield :page_script

@@ -1,0 +1,19 @@
+en:
+  user:
+    profile:
+      nick: 'Nickname'
+      first_name: 'First name'
+      last_name: 'Last name'
+      slug: 'Slug'
+      avatar: 'Avatar'
+      title: 'Profile'
+      label:
+        edit_profile: 'Edit your profile'
+        edit_avatar: 'Change your avatar'
+      msg:
+        updated: 'Your profile was successfully updated.'
+      action:
+        edit: 'Edit profile'
+        edit_avatar: 'Change avatar'
+        save: 'Save'
+        cancel: 'Cancel'

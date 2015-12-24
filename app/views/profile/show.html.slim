@@ -1,0 +1,27 @@
+h2 = t('user.profile.title')
+
+table.table.table-hover
+
+  tr
+    td = t('user.profile.nick')
+    td = @profile.nick
+
+  tr
+    td = t('user.profile.first_name')
+    td = @profile.first_name
+
+  tr
+    td = t('user.profile.last_name')
+    td = @profile.last_name
+
+  tr
+    td = t('user.profile.slug')
+    td = @profile.slug
+
+  tr
+    td = t('user.profile.avatar')
+    td = image_tag @profile.avatar.url(:thumb), class: 'avatar'
+
+= link_to t('user.profile.action.edit'), profile_edit_path, :class => 'btn btn-success'
+
+= link_to t('user.profile.action.edit_avatar'), profile_avatar_path, :class => 'btn btn-success'
