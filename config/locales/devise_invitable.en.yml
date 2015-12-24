@@ -17,6 +17,8 @@ en:
       edit:
         header: "Set your password"
         submit_button: "Set my password"
+      invite_key_field:
+        email: 'Email'
     mailer:
       invitation_instructions:
         subject: "Invitation instructions"

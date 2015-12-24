@@ -4,11 +4,11 @@ h2
   = devise_error_messages!
   = f.hidden_field :invitation_token
   p
-    = f.label t 'devise.invitations.password'
+    = f.label t('devise.invitations.password')
     br
     = f.password_field :password
   p
-    = f.label t 'devise.invitations.password_confirmation'
+    = f.label t('devise.invitations.password_confirmation')
     br
     = f.password_field :password_confirmation
   p
