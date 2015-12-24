@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   before_save :set_admin
   has_many :wishes
+  has_many :waitings
+  has_many :lendings
   has_one :profile
 
   def send_devise_notification(notification, *args)

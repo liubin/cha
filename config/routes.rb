@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'members/all'
+  post 'members/:id/update' => 'members#update', as: 'members'
+
   get 'wish/list'
   get 'wish/all'
   get 'wish/new'

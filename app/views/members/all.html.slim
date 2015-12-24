@@ -1,0 +1,30 @@
+h2 用户列表
+
+
+table.table.table-striped
+  tr
+    th 昵称
+    th 姓名
+    th 借阅中
+    th 预定中
+    th 注册日期
+    th 处理
+
+  - @users.each do |user|
+    tr
+      td = user_link user
+      td
+        - if user.profile.nil?
+          | 未完成注册
+        - else
+          = "#{user.profile.first_name} #{user.profile.last_name}"
+      td = user.lendings.count
+      td = user.waitings.count
+      td = user.created_at
+      td
+        - if user.admin?
+          = link_to '取消管理员权限', members_path(user), method: 'post', class: 'btn btn-danger'
+        - else
+          = link_to '设为管理员', members_path(user), method: 'post', class: 'btn btn-success'
+
+= paginate @users
