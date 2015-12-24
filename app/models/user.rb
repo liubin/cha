@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :validatable, :confirmable, :lockable, :invitable
 
   before_save :set_admin
-
+  has_many :wishes
   has_one :profile
 
   def send_devise_notification(notification, *args)

@@ -1,0 +1,25 @@
+h2 图书申请列表
+
+table.table.table-striped
+  tr
+    th 申请者
+    th 图书名称
+    th 申请日期
+    th 状态
+    th 购入日期
+    th 处理
+
+  - @wishes.each do |wish|
+    tr
+      td = user_link wish.user
+      td
+        = link_to wish.book.title, wish.book
+      td = wish.created_at
+      td = wish.status_str
+      td = wish.updated_at
+      td
+        - if wish.status != Wish::STATUS[:APPROVED]
+          = link_to '删除', wish_destroy_path(wish), method: 'delete', data: {confirm: '要删除这条图书申请么？'}, class: 'btn btn-danger'
+          = link_to '批准', wish_path(wish), method: 'post', data: {confirm: '已购入此书，库存加一？'}, class: 'btn btn-success'
+
+= paginate @wishes

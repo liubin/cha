@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   has_many :lendings
   has_many :waitings
+  has_many :wishes
 
   validates_uniqueness_of :isbn
   validates :isbn, presence: true, length: { is: 13 }

@@ -1,0 +1,16 @@
+h2 图书申请
+
+= form_for(@wish, url: wish_create_path, class: 'form-horizontal') do |f|
+  - if @wish.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@wish.errors.count, "error")} prohibited this profile from being saved:"
+      ul
+        - @wish.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = label_tag 'isbn', 'ISBN', class: 'col-sm-2 control-label'
+    .col-sm-10
+      = text_field_tag 'isbn', '', class: "form-control"
+
+  = f.submit '提交', class: 'btn btn-success'

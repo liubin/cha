@@ -1,4 +1,2 @@
 .user-list-item
-  a href="/profile/#{user.id}"
-    = image_tag user.profile.avatar.url(:thumb), class: 'avatar avatar-36'
-    = user.profile.nick
+  = user_link user

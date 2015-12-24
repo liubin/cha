@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'wish/list'
+  get 'wish/all'
+  get 'wish/new'
+  delete 'wish/:id/destroy' => 'wish#destroy', as: 'wish_destroy'
+  post 'wish/:id/update' => 'wish#update', as: 'wish'
+  post 'wish/create'
+
   resources :books do
     member do
       match 'transfer', via: ['get', 'post']
